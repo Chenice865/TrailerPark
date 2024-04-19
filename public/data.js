@@ -1,27 +1,27 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getFirestore, collection, getDoc, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+import { getFirestore, collection, getDoc, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 import firebaseConfig from "./firebaseConfig.js";
-
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
 async function getFavourites(renderFun){
-    const reviewsRef = collection(db, 'favourites');
-    console.log('hello')
-    const querySnapshot = await getDocs(reviewsRef);
-    const reviews = [];
+    const favouritesRef = collection(db, 'favourites');
+    // console.log('hello')
+    const querySnapshot = await getDocs(favouritesRef);
+    const faveTrailers = [];
     querySnapshot.forEach((doc) => {
        
-        reviews.push(doc.data());
-        
+        faveTrailers.push(doc.data()); 
     });
-    renderFun(reviews);
+    renderFun(faveTrailers);
 }
 
 async function addFavourite(title){
-    return addDoc(collection(db, "favourites"), {title});
+     
+    const fave = addDoc(collection(db, "favourites"), {title});
+    return fave;
 }
 
 async function deleteReview(auth, reviewId){
