@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link
+  href="https://fonts.googleapis.com/css2?family=Abel&family=Inter:slnt@-4&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+
+  <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+</head>
+  <style> 
+    
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      boxsizing: border-box;
+      font-family: 'poppins', sans-serif;
+    }
+
+  nav {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(41, 41, 41, 0.2);
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  position: sticky;
+}
+
+ nav .logo {
+  display: flex;
+  padding-left: 37px;
+}
+
+nav .logo img {
+  position: absolute;
+  width: 46px;
+  margin-right: 10px;
+}
+
+ nav .logo ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0 0 0 85px;
+}
+
+ nav .logo ul li {
+  margin: 0px 10px;
+  padding: 1em;
+}
+
+ nav .logo ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: 0.2s linear;
+}
+
+nav .logo ul li a:hover {
+  color: #000000;
+}
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 8, 51, 0.9), rgba(0, 8, 51, 0.9)), url('https://wallpapers.com/images/hd/beautiful-nature-pictures-qjcss5r32ziry34t.jpg');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search_bar {
+      width: 100%;
+      max-width: 700px;
+      background: rgb(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      border-radius: 60px;
+      backdrop-filter: blur(4px) saturate(180%);
+    }
+
+    .search_bar input {
+      background: transparent;
+      flex: 1;
+      border: 0;
+      outline: none;
+      padding: 24px 20px;
+      font-size: 20px;
+      color: #cac7ff;
+    }
+
+    ::placeholder {
+      color: #cac7ff;
+    }
+
+    #searchBtn {
+      width: 65px;
+    }
+
+    .search_bar button {
+      border: 0;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      background: #58629b;
+      cursor: pointer;
+    }
+
+
+    #inside .yt-video .other_card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background: gainsboro;
+    }
+
+    #inside .yt-video .other_card:hover {
+      background: rgba(0, 8, 51, 0.3);
+    }
+
+    #inside .yt-video .other_card img {
+      border-radius: 20px;
+      margin-right: 80px;
+      margin-left: 30px;
+    }
+
+    #inside .yt-video .other_card .cont {
+      width: 100%;
+      height: 10%;
+    }
+
+    #inside .yt-video .other_card .cont h5 {
+      font-size: 25px;
+      text-decoration: none;
+      color: black;
+      display: flex;
+    }
+
+    ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #dfd3d3;
+    box-shadow: inset 0 0 2px grey;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(226, 220, 202), #400652);
+    border-radius: 8px;
+  }
+
+ </style> 
+    
+  <body>  
+    <nav>
+      <div class="logo">
+        <img src="logo.png">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="trailer_list.html">Trailer Listing</a>
+          </li>
+          <li>
+            <a href="trailer_search.html">Trailer Search</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+     <div class="search_bar">
+       <input type="text" placeholder="search movie name" id="searchInput">
+       <button onclick="search()" id="searchBtn"><i class="fa fa-search"></i></button>
+     </div>
+   </div>
+  
+    <div id="inside">
+      <!-- <a target="_blank" href="#" class="yt-video">
+        <div class="other_card">
+          <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
+            class="poster" />
+          <div class="cont">
+            <h5>Title</h5>
+          </div>
+        </div>
+      </a> -->
+    </div>
+    
+    <script>
+      function playVid(videos) {
+  let html = ''
+
+  const resultofVid = document.querySelector('#inside')
+
+  for (let rec of videos) {
+
+    const phrase = rec.snippet.title;
+    // console.log(phrase)
+
+    const wordIndex = phrase.indexOf("Trailer")
+
+    if (wordIndex !== -1) {
+      html +=
+        `
+      <a target="_blank" href="https://www.youtube.com/watch?v=${rec.id.videoId}" class="yt-video">
+          <div class="other_card">
+            <img
+              src="${rec.snippet.thumbnails.high.url}"
+              class="poster" />
+         <div class="cont">
+           <h5>${rec.snippet.title}</h5>
+         </div>
+         </div>
+       </a>
+         `
+    }
+
+  }
+  resultofVid.innerHTML = html
+}
+
+async function search() {
+
+  const apiKey = 'AIzaSyBiQO7eVkhALPgppYLs7R1kYAsfb1Ba8FE'
+  const searchTerm = document.querySelector('#searchInput').value
+  const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&q=' + encodeURIComponent(searchTerm) + '&videoCategoryId=1&key=' + apiKey
+
+
+  const response = await fetch(url)
+
+  const data = await response.json()
+  playVid(data.items)
+  // console.log(data.items)
+}
+    </script>
+  </body>
+
+</html>

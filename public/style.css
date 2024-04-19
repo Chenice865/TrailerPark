@@ -1,0 +1,314 @@
+html {
+    height: -webkit-fill-available;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(45, 45, 45);
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px -8px black;
+    position: relative;
+  }
+  
+  header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://c4.wallpaperflare.com/wallpaper/436/228/997/movies-mad-max-the-dark-knight-interstellar-movie-wallpaper-preview.jpg') no-repeat center center/cover;
+    opacity: 0.7;
+    z-index: -1;
+  }
+  
+  header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* opacity: 0.7; */
+  }
+  
+  header video {
+    position: absolute;
+    width: 120%;
+    height: 190%;
+    top: -47%;
+    z-index: -1;
+  }
+  
+  header nav {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0, 0.6);
+    padding: 0px 38px;
+    font-family: "Poppins", sans-serif;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    position: sticky;
+  }
+  
+  header nav .logo {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+  }
+  
+  header nav .logo img {
+    position: absolute;
+    width: 46px;
+    margin-right: 10px;
+  }
+  
+  header nav .logo ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 0 0 85px;
+    /* background: linear-gradient(98deg, transparent, #000000); */
+  }
+  
+  header nav .logo ul li {
+    margin: 0px 10px;
+    padding: 1em;
+  }
+  
+  header nav .logo ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: 0.2s linear;
+  }
+  
+  header nav .logo ul li a:hover {
+    color: #aca0a0;
+  }
+  
+  header nav .search {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  #search-bar {
+    padding: 4px 2px 3px 5px;
+    border: navajowhite;
+    outline: none;
+    border-radius: 15px;
+    background: rgba(245, 245, 239, 0.3);
+    color: white;
+  
+  }
+  
+  header nav .search input::placeholder {
+    color: white;
+  }
+  
+  .cont {
+    display: flex;
+  }
+  
+  #holder {
+    position: relative;
+    color: white;
+    margin-top: 45px;
+    padding-left: 50px;
+  }
+  
+  #holder h1 {
+    font-size: 70px;
+    color: #f80000;
+    font-weight: bold;
+    text-shadow: -8px 5px 14px black;
+  }
+  
+  .duration p2 {
+    font-size: 14px;
+    width: 350px;
+    padding-left: 35px;
+  }
+  
+  header section {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    bottom: 15px;
+    color: white;
+  }
+  
+  header section #inside {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* border: 1px solid white; */
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  header section #inside::-webkit-scrollbar {
+    display: none;
+  }
+  
+  header section #inside .yt-video {
+    position: relative;
+    min-width: 205px;
+    height: 220px;
+    /* border: 1px solid white; */
+    border-radius: 8px;
+    margin-right: 10px;
+    background: black;
+    transition: .3s linear;
+  }
+  
+  h4 {
+    font-size: 30px;
+  }
+  
+  header section #inside .yt-video .poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  
+  header section #inside .yt-video:hover {
+    min-width: 300px;
+    overflow: hidden;
+  }
+  
+  header section #inside .yt-video .other_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+    transition: 1s linear;
+  }
+  
+  header section #inside .yt-video .other_card img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
+  header section #inside .yt-video .other_card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(98deg, transparent, #000000);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+  header section #inside .yt-video .other_card .cont {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    color: white;
+    padding: 0px 20px;
+  }
+  
+  header section #inside .yt-video .other_card .cont h5 {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header section #inside .yt-video:hover .other_card {
+    opacity: 1;
+  }
+  
+  header section .fa-arrow-left,
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    width: 25px;
+    height: 25px;
+    background: rgb(192, 185, 185, .3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s linear;
+    z-index: 999;
+    opacity: 0;
+  }
+  
+  header section .fa-arrow-right {
+    left: unset;
+    right: 3%;
+  }
+  
+  header section:hover .fa-arrow-right {
+    opacity: 1;
+  }
+  
+  header section:hover .fa-arrow-left {
+    opacity: 1;
+  }
+  
+  header nav .search .search-options::-webkit-scrollbar {
+    width: 9px;
+    visibility: hidden;
+  }
+  
+  header nav .search .search-options::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+  }
+  
+  header nav .search .search-options::-webkit-scrollbar-thumb {
+    background: rgb(180,58,69);
+    background: linear-gradient(90deg, rgba(180,58,69,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  
+    border-radius: 8px;
+    visibility: hidden;
+  }
+  
+  header nav .search .search-options:hover::-webkit-scrollbar {
+    visibility: visible;
+  }
+  
+  header nav .search .search-options:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+  

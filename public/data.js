@@ -7,32 +7,21 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-async function getBooks(renderFun){
-    let response = await fetch('/books.json');
-    let books = await response.json();
-    renderFun(books);
-}
-
-async function getReviews(isbn, renderFun){
-    const reviewsRef = collection(db, 'reviews');
+async function getFavourites(renderFun){
+    const reviewsRef = collection(db, 'favourites');
+    console.log('hello')
     const querySnapshot = await getDocs(reviewsRef);
     const reviews = [];
     querySnapshot.forEach((doc) => {
-        if (doc.data().isbn === isbn) {
-            reviews.push(doc.data());
-        }
+       
+        reviews.push(doc.data());
+        
     });
     renderFun(reviews);
 }
 
-async function createReview(auth, isbn, text){
-    const reviewData = {
-        isbn,
-        text,
-        userId: auth.currentUser.uid,
-        reviewer: auth.displayName || "Anonymous User"
-    };
-    addDoc(collection(db, "reviews"), reviewData)
+async function addFavourite(title){
+    return addDoc(collection(db, "favourites"), {title});
 }
 
 async function deleteReview(auth, reviewId){
@@ -49,4 +38,4 @@ async function deleteReview(auth, reviewId){
     }
 }
 
-export {getBooks, getReviews, createReview, deleteReview};
+export {getFavourites, addFavourite, deleteReview};
